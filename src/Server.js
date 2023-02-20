@@ -1,8 +1,8 @@
 const express=require('express')
 const dotenv=require('dotenv')
 
-const data=require('../Backend/data.js')
-const Videos =require('./models/model.js')
+const data=require('../data.js')
+const Videos =require('../models/model.js')
 
 //app config
 const app=express()
@@ -19,7 +19,7 @@ app.use((req,res,next)=>{
     next()
 })
 //DB config
-require('./db/db')
+require('../db/db')
 
 //api endpoints
 
