@@ -1,12 +1,12 @@
 const express=require('express')
-
+const dotenv=require('dotenv')
 
 const data=require('../Backend/data.js')
 const Videos =require('./models/model.js')
 
 //app config
 const app=express()
-
+dotenv.config({path:'./config.env'})
 const port=process.env.PORT || 9000
 
 
@@ -35,7 +35,7 @@ app.get('/v2/posts',(req,res)=>{
     //Post request is to add data to database
     
 
-    Videos.find((err,data)=>{
+    Videos.find({},(err,data)=>{
         if(err){
             res.status(500).send(err)
         }
